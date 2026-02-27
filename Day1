@@ -1,0 +1,57 @@
+import asyncio
+import time
+
+async def func1():
+	await asyncio.sleep(4)
+	print("func1")
+
+async def func2():
+	await asyncio.sleep(2)
+	print("func2")
+
+async def func3():
+        print("func3")
+
+async def func4():
+        print("func4")
+
+async def main():
+	await func1()
+	await func2()
+	await func3()
+	await func4()
+
+asyncio.run(main())
+
+
+
+await in sequence ≠ concurrent execution.
+
+
+# This is concurrent execution
+import asyncio
+import time
+
+async def func1():
+	await asyncio.sleep(4)
+	print("func1")
+
+async def func2():
+	await asyncio.sleep(2)
+	print("func2")
+
+async def func3():
+        print("func3")
+
+async def func4():
+        print("func4")
+
+async def main():
+    await asyncio.gather(
+	 func1(),
+	 func2(),
+	 func3(),
+	 func4()
+    )
+
+asyncio.run(main())
