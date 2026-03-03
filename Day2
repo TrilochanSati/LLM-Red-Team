@@ -1,0 +1,18 @@
+Why unlimited concurrency is dangerous
+
+What a semaphore is
+
+How to limit concurrent tasks safely
+
+
+“Even if I have 1,000 tasks, only allow 10 to run at the same time.”
+
+This is controlled concurrency.
+
+And the primitive used in asyncio for this is:
+
+👉 Semaphore
+
+sem = asyncio.Semaphore(5)
+
+maximum tasks running at the same time.
